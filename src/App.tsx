@@ -1,6 +1,10 @@
+import ButtonScrollTop from "./components/ButtonScrollTop";
 import Feature from "./components/Feature";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import Subscribe from "./components/Subscribe";
+import Toko from "./components/Toko";
 
 export default function () {
   return (
@@ -8,7 +12,10 @@ export default function () {
       <Navbar />
       <Hero />
       <Feature />
-      <div class="min-h-screen"></div>
+      <Toko />
+      <Subscribe />
+      <Footer />
+      <ButtonScrollTop />
     </div>
   );
 }

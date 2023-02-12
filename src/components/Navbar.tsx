@@ -1,8 +1,29 @@
+import { For } from "solid-js";
 import ThemeToggler from "./ThemeToggler";
+import { Link } from "@solidjs/router";
+
+export const navlinks = [
+  {
+    title: "Beranda",
+    path: "/",
+  },
+  {
+    title: "Tentang Kami",
+    path: "/tentang-kami",
+  },
+  {
+    title: "Toko",
+    path: "/toko",
+  },
+  {
+    title: "Kontak",
+    path: "/kontak",
+  },
+];
 
 export default () => {
   return (
-    <div class="h-20 flex items-center justify-between lg:px-120px px-4 fixed z-20 top-0 left-0 right-0 dropshadow-blur backdrop-filter backdrop-blur">
+    <div class="h-20 flex items-center justify-between lg:px-120px px-4 fixed z-20 top-0 left-0 right-0 dropshadow-blur backdrop-filter backdrop-blur bg-white bg-opacity-50 dark:bg-gray-800 dark:bg-opacity-50">
       <div class="text-2xl font-bold">Waroja</div>
       <div class="lg:hidden block">
         <button class="p-3">
@@ -21,26 +42,18 @@ export default () => {
         </button>
       </div>
       <ul class="lg:flex hidden lg:space-x-10">
-        <li>
-          <a href="/" class="hover:text-primary font-semibold transition">
-            Beranda
-          </a>
-        </li>
-        <li>
-          <a href="/" class="hover:text-primary font-semibold transition">
-            Tentang Kami
-          </a>
-        </li>
-        <li>
-          <a href="/" class="hover:text-primary font-semibold transition">
-            Toko
-          </a>
-        </li>
-        <li>
-          <a href="/" class="hover:text-primary font-semibold transition">
-            Kontak
-          </a>
-        </li>
+        <For each={navlinks}>
+          {(item) => (
+            <li>
+              <Link
+                href={item.path}
+                class="hover:text-primary font-semibold transition"
+              >
+                {item.title}
+              </Link>
+            </li>
+          )}
+        </For>
         <li>
           <ThemeToggler />
         </li>

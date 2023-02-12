@@ -61,7 +61,7 @@ export default () => {
 
   return (
     <div class="min-h-screen bg-gray-400 bg-opacity-5 py-20 text-center lg:px-120px px-4">
-      <div class="lg:text-4xl text-2xl font-bold">Layanan</div>
+      <div class="lg:text-4xl text-primary text-2xl font-bold">Layanan</div>
       <p class="mt-3">
         Kemudahan yang disediakan untuk membantu pengguna. Semua fasilitas dalam
         genggaman anda.

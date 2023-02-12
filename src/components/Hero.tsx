@@ -1,4 +1,4 @@
-import Hero from "../assets/hero.svg";
+import Hero from "../assets/with_friend.svg";
 
 export default () => {
   return (
