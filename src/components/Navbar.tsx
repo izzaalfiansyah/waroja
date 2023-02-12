@@ -1,4 +1,4 @@
-import { For } from "solid-js";
+import { For, createSignal } from "solid-js";
 import ThemeToggler from "./ThemeToggler";
 import { Link } from "@solidjs/router";
 
@@ -22,11 +22,20 @@ export const navlinks = [
 ];
 
 export default () => {
+  const [showNav, setShowNav] = createSignal(false);
+
+  function toggleShow() {
+    setShowNav(!showNav());
+  }
+
   return (
     <div class="h-20 flex items-center justify-between lg:px-120px px-4 fixed z-20 top-0 left-0 right-0 dropshadow-blur backdrop-filter backdrop-blur bg-white bg-opacity-50 dark:bg-gray-800 dark:bg-opacity-50">
       <div class="text-2xl font-bold">Waroja</div>
-      <div class="lg:hidden block">
-        <button class="p-3">
+      <div class="lg:hidden block flex items-center">
+        <div class="lg:hidden mt-2 mr-1">
+          <ThemeToggler />
+        </div>
+        <button class="p-3" onClick={toggleShow}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -41,20 +50,23 @@ export default () => {
           </svg>
         </button>
       </div>
-      <ul class="lg:flex hidden lg:space-x-10">
+      <ul
+        class="flex lg:flex-row flex-col lg:relative fixed lg:mt-0 mt-20 top-0 lg:bg-transparent p-4 bg-white z-20 lg:w-auto w-full lg:space-x-10 left-0 dark:bg-gray-800 transform scale-0 transition origin-top lg:scale-100 lg:bg-transparent dark:lg:bg-transparent"
+        classList={{ "scale-100": showNav() }}
+      >
         <For each={navlinks}>
           {(item) => (
-            <li>
+            <li class="lg:py-0 py-2">
               <Link
                 href={item.path}
-                class="hover:text-primary font-semibold transition"
+                class="hover:text-primary font-semibold transition block"
               >
                 {item.title}
               </Link>
             </li>
           )}
         </For>
-        <li>
+        <li class="lg:inline hidden">
           <ThemeToggler />
         </li>
       </ul>

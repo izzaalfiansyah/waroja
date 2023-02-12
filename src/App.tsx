@@ -8,7 +8,7 @@ import Toko from "./components/Toko";
 
 export default function () {
   return (
-    <div class="dark:(bg-gray-800 text-gray-50) leading-normal tracking-normal">
+    <div class="dark:(bg-gray-800 text-gray-50) leading-normal tracking-normal transition">
       <Navbar />
       <Hero />
       <Feature />

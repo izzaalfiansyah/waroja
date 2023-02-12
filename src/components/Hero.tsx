@@ -4,7 +4,7 @@ export default () => {
   return (
     <>
       <div class="min-h-screen flex items-center bg-gray-400 bg-opacity-5 lg:px-120px p-4">
-        <div class="rounded-2xl flex-grow bg-primary h-80vh mt-5vh overflow-hidden relative p-10 flex items-center">
+        <div class="rounded-2xl flex-grow bg-primary h-80vh mt-10vh overflow-hidden relative p-10 flex items-center">
           <img
             src="https://flazztax.com/wp-content/uploads/2021/09/Pajak-Bagi-Pelaku-Usaha-UMKM-dan-Kriterianya.jpg"
             class="absolute bottom-0 right-0 lg:w-100vh lg:h-80vh w-300px h-300px object-cover rounded-full transform lg:translate-x-60 translate-x-20 lg:translate-y-0 translate-y-36 shadow"

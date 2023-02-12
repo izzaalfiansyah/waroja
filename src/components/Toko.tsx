@@ -1,9 +1,10 @@
 import { For } from "solid-js";
 import toko from "../libs/toko";
+import { Link } from "@solidjs/router";
 
 export default () => {
   return (
-    <div class="min-h-screen py-20 lg:px-120px p-4">
+    <div class="min-h-screen py-20 lg:px-120px p-6">
       <div class="mb-10 text-center">
         <div class="lg:text-4xl text-2xl font-bold">
           <span class="text-primary">Daftar Toko</span>
@@ -24,7 +25,7 @@ export default () => {
                 />
               </div>
               <div class="py-3">
-                <div class="font-semibold">{item.name}</div>
+                <div class="font-semibold truncate">{item.name}</div>
                 <div class="truncate">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Alias excepturi nesciunt accusantium reiciendis adipisci
@@ -38,9 +39,9 @@ export default () => {
         </For>
       </div>
       <div class="mt-10 text-center">
-        <button class="px-8 p-3 rounded-full text-white bg-primary">
+        <Link href="/toko" class="px-8 p-3 rounded-full text-white bg-primary">
           Selengkapnya
-        </button>
+        </Link>
       </div>
     </div>
   );
