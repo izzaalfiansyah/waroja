@@ -1,4 +1,5 @@
-import Hero from "../assets/with_friend.svg";
+import { Link } from "@solidjs/router";
+import Hero from "../../assets/with_friend.svg";
 
 export default () => {
   return (
@@ -7,7 +8,7 @@ export default () => {
         <div class="rounded-2xl flex-grow bg-primary h-80vh mt-10vh overflow-hidden relative p-10 flex items-center">
           <img
             src="https://flazztax.com/wp-content/uploads/2021/09/Pajak-Bagi-Pelaku-Usaha-UMKM-dan-Kriterianya.jpg"
-            class="absolute bottom-0 right-0 lg:w-100vh lg:h-80vh w-300px h-300px object-cover rounded-full transform lg:translate-x-60 translate-x-20 lg:translate-y-0 translate-y-36 shadow"
+            class="absolute bottom-0 right-0 lg:w-90vh lg:h-80vh w-300px h-300px object-cover rounded-full transform lg:translate-x-60 translate-x-20 lg:translate-y-0 translate-y-36 shadow"
           />
           <div class="relative lg:w-3/5 text-white">
             <div class="lg:text-5xl text-2xl font-bold">
@@ -45,9 +46,12 @@ export default () => {
             manapun dan kapanpun di daerah Jember.
           </div>
           <div class="mt-8">
-            <button class="bg-primary px-8 rounded-full shadow-sm text-white p-3">
+            <Link
+              href="/kontak"
+              class="bg-primary px-8 rounded-full shadow-sm text-white p-3"
+            >
               Hubungi Kami
-            </button>
+            </Link>
           </div>
         </div>
       </div>

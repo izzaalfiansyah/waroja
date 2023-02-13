@@ -1,6 +1,6 @@
 import { For, createSignal } from "solid-js";
 import ThemeToggler from "./ThemeToggler";
-import { Link } from "@solidjs/router";
+import { Link, useLocation } from "@solidjs/router";
 
 export const navlinks = [
   {
@@ -24,13 +24,20 @@ export const navlinks = [
 export default () => {
   const [showNav, setShowNav] = createSignal(false);
 
+  const location = useLocation();
+
   function toggleShow() {
     setShowNav(!showNav());
   }
 
   return (
     <div class="h-20 flex items-center justify-between lg:px-120px px-4 fixed z-20 top-0 left-0 right-0 dropshadow-blur backdrop-filter backdrop-blur bg-white bg-opacity-50 dark:bg-gray-800 dark:bg-opacity-50">
-      <div class="text-2xl font-bold">Waroja</div>
+      <Link
+        href="/"
+        class="text-2xl font-bold block transition hover:text-primary"
+      >
+        Waroja
+      </Link>
       <div class="lg:hidden block flex items-center">
         <div class="lg:hidden mt-2 mr-1">
           <ThemeToggler />
@@ -60,6 +67,8 @@ export default () => {
               <Link
                 href={item.path}
                 class="hover:text-primary font-semibold transition block"
+                classList={{ "text-primary": item.path == location.pathname }}
+                onClick={toggleShow}
               >
                 {item.title}
               </Link>

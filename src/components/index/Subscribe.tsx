@@ -10,7 +10,7 @@ export default () => {
       <div class="relative">
         <input
           type="text"
-          class="w-full rounded-full border border-gray-200 dark:border-gray-700 px-5 p-3 outline-none focus:(bg-gray-100) dark:focus:bg-gray-700 transition dark:bg-gray-800"
+          class="w-full rounded-full border border-gray-200 dark:border-gray-700 px-5 p-3 outline-none dark:bg-gray-800"
           placeholder="Email Kamu"
         />
         <div class="absolute top-0 right-0 bottom-0 px-8 rounded-r-full bg-primary flex items-center justify-center">

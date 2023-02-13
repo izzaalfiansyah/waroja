@@ -29,6 +29,6 @@ export default [
   },
   {
     name: 'Kacang Bakar Flei',
-    img: 'https://disk.mediaindonesia.com/thumbs/1800x1200/news/2021/03/fbd6b74014a7302b4d95730b4841a67a.jpg',
+    img: 'https://cdn.timesmedia.co.id/images/2021/10/15/Caskim-dan-produk-cemilan-kacang-umpetnya.jpg',
   },
 ];

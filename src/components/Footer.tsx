@@ -21,7 +21,7 @@ export default () => {
                   <li class="mb-1">
                     <Link
                       href={item.path}
-                      class="transition hover:text-gray-500"
+                      class="transition hover:text-gray-700"
                     >
                       {item.title}
                     </Link>
@@ -37,7 +37,7 @@ export default () => {
                 <a
                   href="http://instagram.com"
                   target="_blank"
-                  class="transition hover:text-gray-500"
+                  class="transition hover:text-gray-700"
                 >
                   Instagram
                 </a>
@@ -46,7 +46,7 @@ export default () => {
                 <a
                   href="http://facebook.com"
                   target="_blank"
-                  class="transition hover:text-gray-500"
+                  class="transition hover:text-gray-700"
                 >
                   Facebook
                 </a>
@@ -55,7 +55,7 @@ export default () => {
                 <a
                   href="http://mail.google.com"
                   target="_blank"
-                  class="transition hover:text-gray-500"
+                  class="transition hover:text-gray-700"
                 >
                   Email
                 </a>
