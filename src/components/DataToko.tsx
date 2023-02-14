@@ -5,6 +5,7 @@ export default (props: {
   items: Array<{
     name: string;
     img: string;
+    description: string;
   }>;
   loading?: boolean;
 }) => {
@@ -27,12 +28,7 @@ export default (props: {
               <div class="font-semibold truncate group-hover:text-primary">
                 {item.name}
               </div>
-              <div class="truncate">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
-                excepturi nesciunt accusantium reiciendis adipisci voluptates
-                ullam, ipsam repellendus ex sequi atque consequatur vitae? Quia
-                itaque quisquam distinctio! Beatae, officiis nesciunt.
-              </div>
+              <div class="truncate">{item.description}</div>
             </div>
           </Link>
         )}

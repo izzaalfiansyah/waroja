@@ -31,10 +31,10 @@ export default () => {
   }
 
   return (
-    <div class="h-20 flex items-center justify-between lg:px-120px px-4 fixed z-20 top-0 left-0 right-0 dropshadow-blur backdrop-filter backdrop-blur bg-white bg-opacity-50 dark:bg-gray-800 dark:bg-opacity-50">
+    <div class="h-20 flex items-center justify-between lg:px-120px px-4 fixed z-20 top-0 left-0 right-0 backdrop-filter backdrop-blur-xl">
       <Link
         href="/"
-        class="text-2xl font-bold block transition hover:text-primary"
+        class="text-2xl font-bold block transition hover:text-primary text-shadow"
       >
         Waroja
       </Link>
@@ -67,7 +67,10 @@ export default () => {
               <Link
                 href={item.path}
                 class="hover:text-primary font-semibold transition block"
-                classList={{ "text-primary": item.path == location.pathname }}
+                classList={{
+                  "text-primary filter drop-shadow drop-shadow-white":
+                    item.path == location.pathname,
+                }}
                 onClick={toggleShow}
               >
                 {item.title}
