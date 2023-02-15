@@ -15,7 +15,7 @@ export default () => {
         return [...data, ...toko, ...toko];
       });
       setIsLoading(false);
-    }, 1500);
+    }, 800);
   }
 
   onMount(() => {
