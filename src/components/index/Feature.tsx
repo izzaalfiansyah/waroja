@@ -60,24 +60,24 @@ export default () => {
   ];
 
   return (
-    <div class="min-h-screen bg-gray-400 bg-opacity-5 py-20 text-center lg:px-120px px-4">
+    <div class="lg:min-h-screen bg-gray-400 bg-opacity-5 py-20 text-center lg:px-120px px-4">
       <div class="lg:text-4xl text-primary text-2xl font-bold">Layanan</div>
       <p class="mt-3">
         Kemudahan yang disediakan untuk membantu pengguna. Semua fasilitas dalam
         genggaman anda.
       </p>
       <div class="mt-10 lg:px-50px">
-        <div class="flex items-center justify-center lg:flex-row flex-col">
+        <div class="flex items-center justify-center md:flex-row flex-col">
           <For each={feature}>
             {(item) => (
               <div class="flex-1 p-3">
-                <div class="bg-white group hover:(shadow-lg transform scale-105) transition dark:bg-gray-800 lg:h-340px flex lg:flex-col flex-row justify-between p-8 hover:bg-primary transition">
+                <div class="bg-white group hover:(shadow-md transform scale-105) transition dark:bg-gray-800 md:h-340px flex md:flex-col flex-row justify-between p-8 hover:bg-primary transition">
                   <div class="flex justify-center">
-                    <div class="bg-primary group-hover:(bg-white text-primary) dark:group-hover:bg-gray-800 rounded-full lg:h-35 lg:w-35 h-18 w-18 flex items-center justify-center">
+                    <div class="bg-primary group-hover:(bg-white text-primary) dark:group-hover:bg-gray-800 rounded-full md:h-35 md:w-35 h-18 w-18 flex items-center justify-center">
                       {item.icon}
                     </div>
                   </div>
-                  <div class="group-hover:text-white lg:text-center text-left lg:pl-0 pl-5">
+                  <div class="group-hover:text-white md:text-center text-left md:pl-0 pl-5">
                     {item.content}
                   </div>
                 </div>

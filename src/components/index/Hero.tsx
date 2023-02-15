@@ -1,7 +1,16 @@
-import { Link } from "@solidjs/router";
+import { Link, useNavigate } from "@solidjs/router";
 import Hero from "../../assets/with_friend.svg";
+import { createSignal } from "solid-js";
 
 export default () => {
+  const [search, setSearch] = createSignal<string>("");
+  const navigate = useNavigate();
+
+  function handleSubmit(e: Event) {
+    e.preventDefault();
+    navigate("/toko?q=" + search());
+  }
+
   return (
     <>
       <div class="min-h-screen flex items-center bg-gray-400 bg-opacity-5 lg:px-120px p-4">
@@ -18,25 +27,27 @@ export default () => {
               Segera cari produk dari UMKM lokal yang sesuai dengan referensi
               anda dengan mudah dan efisien.
             </div>
-            <div class="mt-8">
+            <form onSubmit={handleSubmit} class="mt-8">
               <input
                 type="text"
                 class="rounded-full p-3 px-5 bg-white text-gray-800 outline-none w-full shadow"
                 placeholder="Cari Sekarang..."
+                value={search()}
+                onInput={(e) => setSearch(e.currentTarget.value)}
               />
-            </div>
+            </form>
           </div>
         </div>
       </div>
-      <div class="min-h-screen p-4 lg:px-120px flex items-center justify-between flex-grow lg:flex-row flex-col">
-        <div class="lg:text-left flex-1">
+      <div class="lg:min-h-screen p-4 lg:px-120px flex items-center justify-between flex-grow md:flex-row flex-col py-20">
+        <div class="md:text-left md:w-1/2">
           <img
             src={Hero}
             alt=""
-            class="inline lg:max-w-450px max-w-80vw lg:mt-0 mt-24"
+            class="inline md:mt-0 mt-24 max-w-full md:pr-10"
           />
         </div>
-        <div class="flex-1 lg:text-left text-center">
+        <div class="md:w-1/2 md:text-left text-center">
           <div class="lg:text-5xl text-2xl font-extrabold mb-8">
             <span class="text-primary">Standar Baru</span> Mencari <br />{" "}
             Referensi Produk Lokal

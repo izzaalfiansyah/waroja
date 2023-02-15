@@ -1,6 +1,6 @@
 export default () => {
   return (
-    <div class="min-h-screen pt-30 pb-20 flex lg:flex-row flex-col items-center lg:px-120px p-4 bg-gray-400 bg-opacity-5">
+    <div class="lg:min-h-screen pt-30 pb-20 flex lg:flex-row flex-col items-center lg:px-120px p-4 bg-gray-400 bg-opacity-5">
       <div class="flex-1 lg:pr-100px lg:text-left text-center">
         <div class="lg:text-5xl text-2xl font-bold">
           Temukan kami di <span class="text-primary">sosial media</span> anda
@@ -70,7 +70,7 @@ export default () => {
           </a>
         </div>
       </div>
-      <div class="flex-1 lg:mt-0 mt-14">
+      <div class="flex-1 lg:mt-0 mt-14 w-full lg:w-auto lg:px-0 px-5">
         <div class="p-10 rounded-lg shadow-lg border-t-2 border-l-2 border-primary bg-white dark:bg-gray-800">
           <div class="lg:text-2xl text-lg font-semibold mb-8">
             Berikan kami sebuah pesan
@@ -107,6 +107,11 @@ export default () => {
               class="rounded w-full outline-none p-2 px-3 bg-gray-100 dark:bg-gray-700 resize-none"
               placeholder="Masukkan Pesan"
             ></textarea>
+          </div>
+          <div class="mt-6">
+            <button class="p-3 rounded px-6 bg-primary text-white">
+              Kirim Pesan
+            </button>
           </div>
         </div>
       </div>

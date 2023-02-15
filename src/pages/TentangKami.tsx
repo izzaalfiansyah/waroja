@@ -23,8 +23,8 @@ const whyus = [
 export default () => {
   return (
     <>
-      <div class="min-h-screen flex items-center lg:px-120px lg:flex-row flex-col p-4 py-30 pb-20">
-        <div class="flex-1 lg:text-left text-center lg:mt-0 mt-10">
+      <div class="lg:min-h-screen flex items-center lg:px-120px lg:flex-row flex-col p-4 py-30 pb-20">
+        <div class="flex-1 lg:text-left text-center lg:mt-0 mt-10 lg:mb-0 mb-14">
           <img src={About} alt="" />
         </div>
         <div class="lg:w-3/5 lg:text-left text-center lg:pl-120px">
@@ -38,7 +38,7 @@ export default () => {
           </div>
         </div>
       </div>
-      <div class="min-h-screen flex items-center lg:px-120px lg:flex-row flex-col p-4 py-20 bg-gray-400 bg-opacity-5">
+      <div class="lg:min-h-screen flex items-center lg:px-120px lg:flex-row flex-col p-4 py-20 bg-gray-400 bg-opacity-5">
         <div class="lg:w-3/5 lg:pr-100px">
           <div class="lg:text-5xl text-2xl font-bold lg:text-left text-center">
             Mengapa Kami?
