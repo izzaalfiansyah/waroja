@@ -95,7 +95,7 @@ export default () => {
               <p class="mt-7">{item()?.description}</p>
               <div class="mt-10 grid grid-cols-3 gap-2">
                 <a
-                  href={`https://api.whatsapp.com/send?phone=6281939123456&text=${new URLSearchParams(
+                  href={`https://api.whatsapp.com/send?phone=6281231921351&text=${new URLSearchParams(
                     "Halo, saya mengetahui usaha UMKM anda dari situs https://waroja.vercel.app. Saya ingin bertanya"
                   ).toString()}`}
                   target="_blank"
