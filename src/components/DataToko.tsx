@@ -20,7 +20,7 @@ export default (props: {
             <div class="h-220px overflow-hidden">
               <img
                 class="bg-gray-100 dark:bg-gray-700 object-cover h-full w-full group-hover:(transform scale-110) transition rounded"
-                src={item.img}
+                src={item.img[0]}
                 alt={item.name}
               />
             </div>

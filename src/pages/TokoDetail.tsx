@@ -1,4 +1,25 @@
+import { useParams } from "@solidjs/router";
+import { For, createSignal, onMount } from "solid-js";
+import toko from "../libs/toko";
+
 export default () => {
+  const params = useParams();
+  const [item, setItem] = createSignal<typeof toko[0]>();
+  const [imgActive, setImgActive] = createSignal<string>();
+
+  function get() {
+    const tokoFilter = toko.filter((item) => {
+      return item.name.replace(/ /gi, "-").toLowerCase() == params.slug;
+    })[0];
+
+    setItem(tokoFilter);
+    setImgActive(item()?.img[0]);
+  }
+
+  onMount(() => {
+    get();
+  });
+
   return (
     <>
       <div class="lg:min-h-screen lg:px-120px p-4 py-20 pt-30">
@@ -6,40 +27,34 @@ export default () => {
           <div class="md:w-1/2 md:pr-14 md:mb-0 mb-20">
             <img
               class="bg-gray-100 dark:bg-gray-700 rounded-lg lg:h-400px h-300px mb-4 object-cover"
-              src="https://gobiz.co.id/pusat-pengetahuan/wp-content/uploads/2021/07/Farhan-Abas-Unsplash-UMKM-usaha-kecil-usaha-mikro-2.jpg"
+              src={imgActive()}
             />
             <div class="flex flex-row flex-wrap">
-              <img
-                class="rounded bg-gray-100 dark:bg-gray-700 lg:h-80px h-50px lg:w-80px w-50px mr-2 mb-2 object-cover"
-                src="https://salamadian.com/wp-content/uploads/2019/11/Pengertian-UKM-dan-UMKM.jpg"
-              />
-              <img
-                class="rounded bg-gray-100 dark:bg-gray-700 lg:h-80px h-50px lg:w-80px w-50px mr-2 mb-2 object-cover"
-                src="https://assets.website-files.com/60865b2e948bd69b89087ef2/6181eb29e006a306c484a378_4uxmVeDOsizxiITze-WWNhA10p9MxU41DoIe9BNfC0vumXeST-ewfO_aPXIcyiBo7VongDAdU9iGRHxiApo_7v_XIlsWvQWOj4jT0bN5xylhX1S9BpjhErJteGtDnz-HXdko_EEV.jpeg"
-              />
-              <img
-                class="rounded bg-gray-100 dark:bg-gray-700 lg:h-80px h-50px lg:w-80px w-50px mr-2 mb-2 object-cover"
-                src="https://mui.or.id/wp-content/uploads/2021/12/Foto-UMKM.jpeg"
-              />
+              <For each={item()?.img}>
+                {(img) => (
+                  <img
+                    class="rounded bg-gray-100 dark:bg-gray-700 lg:h-80px h-50px lg:w-80px w-50px mr-2 mb-2 object-cover cursor-pointer"
+                    src={img}
+                    onClick={(e) => {
+                      setImgActive(img);
+                    }}
+                  />
+                )}
+              </For>
             </div>
           </div>
           <div class="md:w-1/2 md:text-left text-center">
             <div class="lg:text-5xl text-2xl font-bold text-primary">
-              Lorem Ipsum Dolor
+              {item()?.name}
             </div>
             <div class="mt-2 text-sm text-primary">
               Jln. Garuda, Dusun Karanganyar, Desa Karangrejo, Kecamatan
               Gumukmas, Kabupaten Jember
             </div>
-            <p class="mt-7">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem et
-              odit eos reprehenderit perspiciatis mollitia nobis sint? Magni
-              corrupti ipsam animi illum ullam, quos nam nemo, blanditiis
-              exercitationem, nihil repudiandae!
-            </p>
+            <p class="mt-7">{item()?.description}</p>
             <div class="mt-10">
               <a
-                href={`https://api.whatsapp.com?send=phone=6281231921351&text=${new URLSearchParams(
+                href={`https://api.whatsapp.com/send?phone=6281939123456&text=${new URLSearchParams(
                   "Halo, saya mengetahui usaha UMKM anda dari situs https://waroja.vercel.app. Saya ingin bertanya"
                 ).toString()}`}
                 target="_blank"
